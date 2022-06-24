@@ -1,44 +1,20 @@
-import { useEffect } from 'react';
 import './App.scss';
 
 import Key from '../key';
-import { KEYS } from '../../data/keys';
+import { keys } from '../../data/keys';
 
-function App() {
-  const { numRow, topRow, middleRow, bottomRow } = KEYS;
-
-  useEffect(() => {
-    const keyDownListener = (event: KeyboardEvent) => event.preventDefault();
-
-    document.addEventListener('keydown', keyDownListener);
-
-    return () => document.removeEventListener('keydown', keyDownListener);
-  });
-
+const App = () => {
   return (
-    <div className="container">
-      <div>
-        {numRow.map((key) => (
-          <Key key={key} letter={key} />
-        ))}
-      </div>
-      <div>
-        {topRow.map((key) => (
-          <Key key={key} letter={key} />
-        ))}
-      </div>
-      <div>
-        {middleRow.map((key) => (
-          <Key key={key} letter={key} />
-        ))}
-      </div>
-      <div>
-        {bottomRow.map((key) => (
-          <Key key={key} letter={key} />
-        ))}
-      </div>
+    <div className="keyboard">
+      {keys.map((row, idx) => (
+        <div key={idx} className="keyboard__row">
+          {row.map((key) => (
+            <Key key={key.code} {...key} />
+          ))}
+        </div>
+      ))}
     </div>
   );
-}
+};
 
 export default App;

@@ -1,26 +1,31 @@
 import React, { useEffect, useState } from 'react';
 import clsx from 'clsx';
+import { KeyProps } from '../../data/keys';
 
 import './Key.scss';
 
-interface KeyProps {
-  letter: string;
-}
-
-const Key: React.FC<KeyProps> = ({ letter }) => {
+const Key: React.FC<KeyProps> = ({
+  isLarge: isLetter,
+  display,
+  code,
+  width,
+}) => {
   const [active, setActive] = useState(false);
 
   useEffect(() => {
-    const keyDownListener = (event: KeyboardEvent) => {
-      if (event.key === letter.toLowerCase()) {
-        setActive(true);
+    const keyCheck = (cb: () => void) => (event: KeyboardEvent) => {
+      // if (['Tab', 'Space', 'AltLeft', 'AltRight'].includes(event.code)) {
+      //   event.preventDefault();
+      // }
+      event.preventDefault();
+
+      if (event.code === code) {
+        cb();
       }
     };
-    const keyUpListener = (event: KeyboardEvent) => {
-      if (event.key === letter.toLowerCase()) {
-        setActive(false);
-      }
-    };
+
+    const keyDownListener = keyCheck(() => setActive(true));
+    const keyUpListener = keyCheck(() => setActive(false));
 
     document.addEventListener('keydown', keyDownListener);
     document.addEventListener('keyup', keyUpListener);
@@ -29,9 +34,16 @@ const Key: React.FC<KeyProps> = ({ letter }) => {
       document.removeEventListener('keydown', keyDownListener);
       document.removeEventListener('keyup', keyUpListener);
     };
-  }, [letter]);
+  }, [code]);
 
-  return <button className={clsx(active && 'active')}>{letter}</button>;
+  return (
+    <button
+      className={clsx(active && 'active', isLetter && 'letter', 'unselectable')}
+      style={{ width: width }}
+    >
+      {display}
+    </button>
+  );
 };
 
 export default Key;

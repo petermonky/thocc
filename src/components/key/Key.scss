@@ -3,19 +3,25 @@ button {
   background-color: white;
   border: 3px solid black;
   border-radius: 10px;
-  height: 64px;
-  width: 64px;
+  font-family: Inter;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 12px;
   box-shadow: 0 12px;
-  transition: transform 20ms ease-in, box-shadow 20ms ease-in;
-  margin-left: 8px;
+  transition: transform 25ms ease-in, box-shadow 25ms ease-in;
   position: relative;
   outline: none;
+  display: inline-flex;
+  justify-content: center;
+  height: 50px;
 
   &:active,
   &.active {
-    box-shadow: none;
-    transform: translateY(12px);
+    box-shadow: 0 0;
+    transform: translateY(10px);
+  }
+
+  &.letter {
+    display: block;
+    font-size: 20px;
   }
 }
