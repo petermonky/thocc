@@ -6,16 +6,16 @@ export interface KeyProps {
 }
 
 const keySizes = {
-  small: 50,
-  medium: 65,
+  small: 48,
+  medium: 60,
   backspace: 100,
-  tab: 75,
-  backslash: 75,
-  capsLock: 90,
-  enter: 120,
-  shiftLeft: 120,
-  shiftRight: 90,
-  space: 385,
+  tab: 76,
+  backslash: 72,
+  capsLock: 88,
+  enter: 116,
+  shiftLeft: 116,
+  shiftRight: 88,
+  space: 376,
 };
 
 export const keys: KeyProps[][] = [

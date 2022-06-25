@@ -14,12 +14,8 @@ const Key: React.FC<KeyProps> = ({
 
   useEffect(() => {
     const keyCheck = (cb: () => void) => (event: KeyboardEvent) => {
-      // if (['Tab', 'Space', 'AltLeft', 'AltRight'].includes(event.code)) {
-      //   event.preventDefault();
-      // }
-      event.preventDefault();
-
       if (event.code === code) {
+        event.preventDefault();
         cb();
       }
     };
