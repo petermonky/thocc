@@ -1,23 +1,24 @@
-button {
+.key {
   cursor: pointer;
-  background-color: white;
-  border: 3px solid black;
+  background-color: var(--key-face-color);
+  border: none;
   border-radius: 10px;
   font-family: Inter;
   font-weight: bold;
   font-size: 12px;
-  box-shadow: 0 8px;
+  box-shadow: 0 12px var(--key-body-color);
   transition: transform 25ms ease-in, box-shadow 25ms ease-in;
   position: relative;
   outline: none;
   display: inline-flex;
   justify-content: center;
   height: 48px;
+  color: var(--key-text-color);
 
   &:active,
   &.active {
-    box-shadow: 0 0;
-    transform: translateY(8px);
+    box-shadow: 0 0 var(--key-body-color);
+    transform: translateY(12px);
   }
 
   &.letter {

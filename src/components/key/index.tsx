@@ -34,7 +34,12 @@ const Key: React.FC<KeyProps> = ({
 
   return (
     <button
-      className={clsx(active && 'active', isLetter && 'letter', 'unselectable')}
+      className={clsx(
+        active && 'active',
+        isLetter && 'letter',
+        'unselectable',
+        'key'
+      )}
       style={{ width: width }}
     >
       {display}
