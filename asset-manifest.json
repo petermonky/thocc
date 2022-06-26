@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/thocc/static/css/main.23ad1b22.css",
+    "main.js": "/thocc/static/js/main.88b11b03.js",
+    "index.html": "/thocc/index.html",
+    "main.23ad1b22.css.map": "/thocc/static/css/main.23ad1b22.css.map",
+    "main.88b11b03.js.map": "/thocc/static/js/main.88b11b03.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.23ad1b22.css",
+    "static/js/main.88b11b03.js"
+  ]
+}
