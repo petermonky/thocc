@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
   background-color: var(--background-color);
+  transition: background-color 100ms ease-in-out;
 
   .keyboard {
     &__row {
@@ -14,22 +15,25 @@
     }
   }
 
-  --background-color: #23272a;
-  --key-face-color: #5865f2;
-  --key-body-color: #404eed;
-  --key-text-color: #f6f6f6;
-
-  &.duolingo {
-    --background-color: #235390;
-    --key-face-color: #58cc02;
-    --key-body-color: #58a700;
-    --key-text-color: #ffffff;
-  }
+  --background-color: white;
+  --key-face-color: white;
+  --key-border-color: black;
+  --key-body-color: black;
+  --key-text-color: black;
 
   &.discord {
     --background-color: #23272a;
     --key-face-color: #5865f2;
+    --key-border-color: #5865f2;
     --key-body-color: #404eed;
     --key-text-color: #f6f6f6;
+  }
+
+  &.duolingo {
+    --background-color: #235390;
+    --key-face-color: #58cc02;
+    --key-border-color: #58cc02;
+    --key-body-color: #58a700;
+    --key-text-color: #ffffff;
   }
 }

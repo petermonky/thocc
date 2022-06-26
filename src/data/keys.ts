@@ -202,3 +202,27 @@ export const keys: KeyProps[][] = [
     },
   ],
 ];
+
+interface ThemeProps {
+  name: string;
+  display: string;
+  color: string;
+}
+
+export const themes: ThemeProps[] = [
+  {
+    name: 'normal',
+    display: 'Default',
+    color: 'black',
+  },
+  {
+    name: 'discord',
+    display: 'Discord',
+    color: '#5865f2',
+  },
+  {
+    name: 'duolingo',
+    display: 'Duolingo',
+    color: '#58cc02',
+  },
+];
